@@ -3,22 +3,24 @@
 //      <h1> I'm h1 tag </h1>
 //      <h2> I'm h2 tag </h2>
 // </div>
-//    </div> 
+//    </div>
+import React from "react";
+import ReactDOM from "react-dom/client";
 
+const elem = <span> React Element </span>;
 
-const parent= React.createElement("div",{id:"parent"},
-[React.createElement("div",{id:"child"},
-[React.createElement("h1",{},"I'm h1 tag"),
-React.createElement("h2",{},"I'm h2 tag"),
-]),
-React.createElement("div",{id:"child2"},
-[React.createElement("h1",{},"I'm h1 tag"),
-React.createElement("h2",{},"I'm h2 tag"), //object
-])
-]
-)
-//JSX
+const title = (
+  <h1 tabIndex="1" className="head">
+    {elem}
+    Namaste React..
+  </h1>
+);
 
-const heading= React.createElement("h1",{id:"heading", xyz:"abc"},"Hello World from React")
-const root= ReactDOM.createRoot(document.getElementById("root"))
-root.render(parent)
+const Heading = () => (
+  <div id="container">
+    <h1> Namaste React from functional component</h1>
+  </div>
+);
+
+const root = ReactDOM.createRoot(document.getElementById("root"));
+root.render(title);
